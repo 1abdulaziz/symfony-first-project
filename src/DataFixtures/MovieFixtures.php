@@ -16,6 +16,8 @@ class MovieFixtures extends Fixture
         $movie->setReleaseYear(1999);
         $movie->setDescription('A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.');
         $movie->setImagePath('https://picsum.photos/200/300');
+        $movie->addActor($this->getReference('actor-1'));
+        $movie->addActor($this->getReference('actor-3'));
         $manager->persist($movie);
 
 
@@ -24,6 +26,8 @@ class MovieFixtures extends Fixture
         $movie2->setReleaseYear(2000);
         $movie2->setDescription('A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.');
         $movie2->setImagePath('https://picsum.photos/200/300');
+        $movie2->addActor($this->getReference('actor-1'));
+        $movie2->addActor($this->getReference('actor-2'));
         $manager->persist($movie2);
         $manager->flush();
 
