@@ -9,12 +9,35 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+
+{#    for movies #}
+    <h1>Movie List</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% set i = 1 %}
+        {% for movie in movies %}
+            <tr>
+                <th scope="row">{{ i }}</th>
+                <td>{{ movie }}</td>
+            </tr>
+        {% set i = i + 1 %}
+        {% endfor %}
+
+
+    <h1>Hello ! ✅</h1>
 
     This friendly message is coming from:
     <ul>
         <li>Your controller at <code><a href="{{ '/app/src/Controller/MoviesController.php'|file_link(0) }}">src/Controller/MoviesController.php</a></code></li>
         <li>Your template at <code><a href="{{ '/app/templates/movies/index.html.twig'|file_link(0) }}">templates/movies/index.html.twig</a></code></li>
     </ul>
+        </tbody>
+    </table>
 </div>
 {% endblock %}
