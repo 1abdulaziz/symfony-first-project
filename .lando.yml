@@ -3,3 +3,24 @@ recipe: symfony
 config:
   webroot: public
   php: "8.0"
+
+services:
+  appserver:
+    build_as_root:
+      # Note that you will want to use the script for the major version of node you want to install
+      # See: https://github.com/nodesource/distributions/blob/master/README.md#installation-instructions
+      - curl -sL https://deb.nodesource.com/setup_16.x | bash -
+      - apt-get install -y nodejs && apt-get install yarn
+  phpmyadmin:
+    type: phpmyadmin
+    hosts:
+      - database
+  node:
+    type: node:14
+tooling:
+  node:
+    service: appserver
+  npm:
+    service: appserver
+  yarn:
+    service: appserver
