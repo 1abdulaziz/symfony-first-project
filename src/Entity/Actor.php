@@ -69,4 +69,10 @@ class Actor
 
         return $this;
     }
+
+    // to string method
+    public function __toString(): string
+    {
+        return $this->name;
+    }
 }
