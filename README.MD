@@ -8,3 +8,5 @@
   - Run `lando console make:entity Movie` if you want to create a new entity or fields on entity existing
   - Run `lando composer require symfony/form` if you need forms in symfony
     - `lando console make:form MovieFormType Movie` - `lando console make:form FormName EntityName` Creates form
+
+- Run `lando composer require symfony/security-bundle` to install sec
